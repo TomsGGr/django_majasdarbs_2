@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jūzeru saraksts no DB</title>
+</head>
+<body>
+
+<br>
+<b>Visi lietotāji datu bāzē:</b>
+<br>
+<ul>
+{% for element in visi_juzeri %}
+    <li><b>{{ element.user }}</b><br>
+        {{ element.email }}</li>
+{% endfor %}
+</ul>
+
+<br><br>
+<a href="add-user">Pievienot jaunu lietotāju</a>
+
+</body>
+</html>

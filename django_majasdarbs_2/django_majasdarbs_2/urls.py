@@ -20,6 +20,11 @@ import uzdevumi.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('add-user', uzdevumi.views.django_md2_skats_1),
-    path('', uzdevumi.views.django_md2_skats_saraksts),
+
+    path('add-user', uzdevumi.views.md3_skats_db_forma),
+    path('', uzdevumi.views.md3_skats_db_saraksts),
+
+    path('add-user-vecais', uzdevumi.views.django_md2_skats_1),
+    path('user-list-vecais', uzdevumi.views.django_md2_skats_saraksts),
+    path('user-list-vecais-2', uzdevumi.views.django_md_skats_saraksts_b),
 ]

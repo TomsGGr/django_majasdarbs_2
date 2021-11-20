@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>New user</title>
+    <title>Jauna lietotāja pievienošana</title>
 </head>
 <body>
 
 <form action="" method="post">
 	{% csrf_token %}
-	User name: <input type="text" name="username"><br>
-	E-mail: <input type="text" name="email"><br>
-	<input type="submit">
+	Lietotāja vārds: <input type="text" name="username"><br><br>
+	E-pasts: <input type="email" name="email"><br><br>
+	<input type="submit" value="Pievienot">
 </form>
 
 </body>
