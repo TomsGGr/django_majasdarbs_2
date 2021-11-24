@@ -23,6 +23,7 @@ urlpatterns = [
 
     path('add-user', uzdevumi.views.md3_skats_db_forma),
     path('', uzdevumi.views.md3_skats_db_saraksts),
+    path('user/<int:user_id>', uzdevumi.views.md4_skats_viens_juzeris, name='viens_juzeris'),
 
     path('add-user-vecais', uzdevumi.views.django_md2_skats_1),
     path('user-list-vecais', uzdevumi.views.django_md2_skats_saraksts),

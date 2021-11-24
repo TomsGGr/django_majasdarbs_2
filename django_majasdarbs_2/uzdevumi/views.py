@@ -1,8 +1,22 @@
+import datetime
+
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Juzeru_klase
 
-juzeru_saraksts = []
+
+def md4_skats_viens_juzeris(request, user_id):
+
+	user = Juzeru_klase.objects.get(id=user_id)
+
+	return render(
+		request,
+		template_name='md4_viens_juzeris.html',
+		context={
+			'user': user,
+		}
+	)
+
 
 
 def md3_skats_db_forma(request):
@@ -36,6 +50,8 @@ def md3_skats_db_saraksts(request):
 
 	juuzeri = Juzeru_klase.objects.all() # Juzeru_klase.object.get(id=1)  vai Juzeru_klase.object.get(user='Toms') vai Juzeru_klase.object.filter(user='Anna') (atgriež visus, kam user='Anna')
 
+	juuzeri_rw = reversed(juuzeri)
+
 	return render(
 		request,
 		template_name='md3_db_03.html',
@@ -46,6 +62,8 @@ def md3_skats_db_saraksts(request):
 
 
 # vecais mājasdarbs bez DB --------------------------------------------------------
+
+juzeru_saraksts = []
 
 def django_md2_skats_1(request):
 

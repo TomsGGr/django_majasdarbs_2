@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saraksts</title>
+</head>
+<body>
+    <ul>
+    {% for element in saraksts %}
+        <li><b> {{ element.juzeris }} </b></li>
+        {{ element.epasts }}<br>
+    {% endfor %}
+    </ul>
+</body>
+</html>

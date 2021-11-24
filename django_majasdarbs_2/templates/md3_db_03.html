@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <title>Jūzeru saraksts no DB</title>
 </head>
-<body>
+<body style="font-family: Arial">
 
 <br>
-<b>Visi lietotāji datu bāzē:</b>
+<b>Visi lietotāji datubāzē:</b>
 <br>
 <ul>
 {% for element in visi_juzeri %}
-    <li><b>{{ element.user }}</b><br>
-        {{ element.email }}</li>
+    <li>
+    <a href="{% url 'viens_juzeris' user_id=element.id %}">
+    <b>{{ element.user }}</b></a>
+        &nbsp;{{ element.email }}
+
+    </li><br>
 {% endfor %}
 </ul>
 
-<br><br>
+<br>
 <a href="add-user">Pievienot jaunu lietotāju</a>
 
 </body>
