@@ -1,8 +1,36 @@
-import datetime
-
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Juzeru_klase
+
+
+
+# CSV --------------------------------------------------------
+
+from .forms import UploadCsvForm
+from .csv_handler import read_and_decode_csv, csv_rows_to_db
+
+def upload_csv_to_db(request):
+
+	form = UploadCsvForm(request.POST or None, request.FILES or None)
+
+	if request.method == 'POST':
+		if form.is_valid():
+			decoded_file = read_and_decode_csv(request.FILES['izvēlies_csv_failu'])
+			csv_rows_to_db(decoded_file)
+			return HttpResponse('Dati no *.csv faila veiksmīgi pievienoti datubāzei <br><br> (!) Refrešojot šo lapu, dati tiek vēlreiz pievienoti')
+
+
+	return render(
+		request,
+		template_name='csv_upload_form.html',
+		context={'form': form }
+	)
+
+
+
+
+
+# --------------------------------------------------------
 
 
 def md4_skats_viens_juzeris(request, user_id):
@@ -49,8 +77,6 @@ def md3_skats_db_forma(request):
 def md3_skats_db_saraksts(request):
 
 	juuzeri = Juzeru_klase.objects.all() # Juzeru_klase.object.get(id=1)  vai Juzeru_klase.object.get(user='Toms') vai Juzeru_klase.object.filter(user='Anna') (atgriež visus, kam user='Anna')
-
-	juuzeri_rw = reversed(juuzeri)
 
 	return render(
 		request,

@@ -28,4 +28,7 @@ urlpatterns = [
     path('add-user-vecais', uzdevumi.views.django_md2_skats_1),
     path('user-list-vecais', uzdevumi.views.django_md2_skats_saraksts),
     path('user-list-vecais-2', uzdevumi.views.django_md_skats_saraksts_b),
+
+    path('add-file', uzdevumi.views.upload_csv_to_db),
+
 ]
