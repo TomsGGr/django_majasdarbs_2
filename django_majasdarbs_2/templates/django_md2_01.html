@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Jauna lietotāja pievienošana</title>
-</head>
-<body style="font-family: Arial">
+{% extends 'base.html' %}
+{% block content %}
 
 <form action="" method="post">
 	{% csrf_token %}
 	Lietotāja vārds: <input type="text" name="username"><br><br>
 	E-pasts: <input type="email" name="email"><br><br>
-	<input type="submit" value="Pievienot">
+	<input class="poga" type="submit" value="Pievienot" >
 </form>
 
-</body>
-</html>
+
+{% endblock %}

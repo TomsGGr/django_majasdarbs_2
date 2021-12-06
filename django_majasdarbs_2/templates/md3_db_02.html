@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Jauns jūzeris pievienots DB</title>
-</head>
-<body style="font-family: Arial">
+{% extends 'base.html' %}
+{% block content %}
+
 
 <h1>Veiksmīgi pievienots <u>{{ juzeris.user }}</u> </h1>
 
@@ -15,5 +11,5 @@
 <p><br><a href="/">Lietotāju saraksts datubāzē</a></p>
 
 
-</body>
-</html>
+
+{% endblock %}

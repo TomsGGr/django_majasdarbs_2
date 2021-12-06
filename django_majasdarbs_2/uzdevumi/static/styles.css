@@ -1,0 +1,32 @@
+body {
+    color: #deb218;
+    background-color: #3a3a3a;
+    font-size: 16px;
+    font-family: Verdana;
+}
+
+A {  text-decoration: none;
+     color: #179db5;
+  }
+A:hover {  text-decoration: underline  }
+
+form {
+  font-family: Verdana;
+  font-size: 16px;
+  color: #deb218;
+
+  background-color: dimgrey;
+  border: none;
+  padding: 30px 30px 30px 30px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.poga {
+    color: black;
+    background-color: #deb218;
+    font-size: 16px;
+    font-family: Verdana;
+    border: none;
+}

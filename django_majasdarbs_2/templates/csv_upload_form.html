@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>CSV upload form</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
+
 <form action="" method="post" enctype="multipart/form-data">
 	{% csrf_token %}
     {{ form.as_p }}
 	<input type="submit" value="Pievienot">
 </form>
-</body>
-</html>
+
+{% endblock %}

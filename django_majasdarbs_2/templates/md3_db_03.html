@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Jūzeru saraksts no DB</title>
-</head>
-<body style="font-family: Arial">
+{% extends 'base.html' %}
+{% block content %}
+
 
 <br>
 <b>Visi lietotāji datubāzē:</b>
@@ -25,5 +21,5 @@
 <br><br>
 <a href="add-file">Pievienot jaunus lietotājus no *.csv faila</a>
 
-</body>
-</html>
+
+{% endblock %}
